@@ -1,0 +1,17 @@
+# eclipse
+.project
+.settings
+.classpath
+
+# maven
+target/
+
+# java complie file
+*.class
+
+# bak files
+*~
+*.bak
+
+# others
+*.zip
