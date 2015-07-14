@@ -10,6 +10,7 @@
 	<modules>
 		<module>algorithms-core</module>
 		<module>algorithms-assignment</module>
+		<module>algorithms-application</module>
 	</modules>
 
 	<name>algorithms</name>
