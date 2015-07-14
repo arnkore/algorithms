@@ -9,6 +9,7 @@
 
 	<modules>
 		<module>algorithms-core</module>
+		<module>algorithms-assignment</module>
 	</modules>
 
 	<name>algorithms</name>
