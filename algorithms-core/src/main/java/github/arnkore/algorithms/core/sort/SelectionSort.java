@@ -1,6 +1,7 @@
 package github.arnkore.algorithms.core.sort;
 
 public class SelectionSort {
+	@SuppressWarnings("rawtypes")
 	public static void sort(Comparable[] arr) {
 		int N = arr.length;
 
