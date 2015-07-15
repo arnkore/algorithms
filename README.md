@@ -1,7 +1,44 @@
 # Introduction
-* algs: 主项目
-* algs-inf: 子项目,stanford大学robot-sedgewick教授的algs4课程中用到的算法和标准库，我将其引入为maven module并添加package管理，方便学习使用。
-* algs-learn: 子项目, 依赖algs-inf, 个人学习算法时的代码.
+* algorithms-core: 基本的算法和数据结构的实现。
+* algorithms-assignment: coursera上算法一、算法二的所有大作业解法，供大家参考，但请不要复制我的代码提交。
+* algorithms-application: 算法应用，依赖algorithms-core。
+
+# 并查集
+### 目标
+* 求解连通性问题
+
+### 实现
+* 每个点指向父节点，指向自身的节点为根节点，根节点的值代表的是该connected component的编号
+* union时根据connected component的size来做平衡
+* 寻找根节点时做路径压缩(very brilliant idea)
+
+### 应用
+* percolation
+* Kruskal algorithm
+
+# 栈和队列
+### 链表
+* 栈：单链表，head指针指向栈顶 
+* 队列：单链表，head指针指向队尾，tail指针指向队首
+* 双端队列（deque）：双向链表
+
+### resizing array
+* 插入数据前，如果存储空间已满，倍增
+* 移除数据后，如果存储空间利用率等于1/4，倍减
+* 栈：数组栈
+* 队列：实际申请的数组为capacity + 1, 注意：1.队列大小的计算， 2.resize之后需要更新head，tail索引。
+* 随机化队列：resizing array，类似于数组栈，需要移除的元素跟栈顶元素交换，然后移除栈顶元素即可。
+
+# 排序
+## 插入排序
+* 平均复杂度为~1/4 N^2
+* 排序partially ordered的数据集的复杂度为O(N)
+* 标准库的实现在数据长度<=7时采用了插入排序
+
+## 希尔排序
+* knuth's increment sequence: 3x + 1
+* 本质上是多次插入排序算法，只不过间隔为x
+* 算法复杂度为O(N^3/2)
 
 # 图算法
 
