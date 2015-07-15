@@ -1,7 +1,5 @@
 package github.arnkore.algorithms.core.stack;
 
-import github.arnkore.algorithms.core.exceptions.EmptyStackException;
-
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 

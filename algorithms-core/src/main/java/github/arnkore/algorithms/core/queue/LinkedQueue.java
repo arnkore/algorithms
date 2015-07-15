@@ -1,7 +1,5 @@
 package github.arnkore.algorithms.core.queue;
 
-import github.arnkore.algorithms.core.exceptions.EmptyQueueException;
-
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 

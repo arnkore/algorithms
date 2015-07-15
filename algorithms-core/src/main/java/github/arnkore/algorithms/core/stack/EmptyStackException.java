@@ -1,4 +1,4 @@
-package github.arnkore.algorithms.core.exceptions;
+package github.arnkore.algorithms.core.stack;
 
 public class EmptyStackException extends RuntimeException {
 	private static final long serialVersionUID = -6675352941515824756L;

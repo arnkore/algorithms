@@ -1,4 +1,4 @@
-package github.arnkore.algorithms.core.exceptions;
+package github.arnkore.algorithms.core.queue;
 
 public class EmptyQueueException extends RuntimeException {
 	private static final long serialVersionUID = 1L;

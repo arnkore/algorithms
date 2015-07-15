@@ -1,4 +1,4 @@
-package github.arnkore.algorithms.core.uf;
+package github.arnkore.algorithms.core;
 
 import edu.princeton.cs.algs4.stdlib.In;
 
