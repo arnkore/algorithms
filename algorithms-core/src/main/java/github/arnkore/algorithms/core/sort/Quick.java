@@ -3,8 +3,7 @@ package github.arnkore.algorithms.core.sort;
 import edu.princeton.cs.algs4.stdlib.StdRandom;
 import github.arnkore.algorithms.core.Shuffle;
 
-public class QuickSort {
-	private static final int CUTOFF = 11;
+public class Quick {
 	/**
 	 * 快速排序的分区算法
 	 * @param arr 待分区的数组
@@ -39,7 +38,7 @@ public class QuickSort {
 	 * @return
 	 */
 	@SuppressWarnings("rawtypes")
-	private static int medianOf3(Comparable[] arr, int i, int j, int k) {
+	public static int medianOf3(Comparable[] arr, int i, int j, int k) {
 		if (SortHelper.less(arr[i], arr[j])) {
 			if (SortHelper.less(arr[j], arr[k])) {
 				return j;
@@ -55,9 +54,44 @@ public class QuickSort {
 		}
 	}
 	
+	/**
+	 * 返回一组数据中排名为k的值
+	 * @param arr
+	 * @param k
+	 * @return
+	 */
+	@SuppressWarnings("rawtypes")
+	public static Comparable kthOfElements(Comparable[] arr, int k) {
+		if (k <= 0 || k > arr.length) {
+			throw new IllegalArgumentException("illegal k");
+		}
+		
+		StdRandom.shuffle(arr);
+		int low = 0, high = arr.length - 1;
+		while (low < high) {
+			int p = partition(arr, low, high);
+			
+			if (p < k - 1) {
+				low = p + 1;
+			} else if (p > k - 1) {
+				high = p - 1;
+			} else {
+				return arr[k - 1];
+			}
+		}
+		
+		return arr[k - 1];
+	}
+	
+	/**
+	 * 排序数组中制定范围的数据
+	 * @param arr
+	 * @param low
+	 * @param high
+	 */
 	@SuppressWarnings("rawtypes")
 	private static void sort(Comparable[] arr, int low, int high) {
-		if (high - low + 1 <= CUTOFF) {
+		if (high - low + 1 <= SortHelper.CUTOFF) {
 			InsertionSort.sort(arr, low, high);
 			return;
 		}
@@ -66,6 +100,10 @@ public class QuickSort {
 		sort(arr, k + 1, high);
 	}
 	
+	/**
+	 * 排序整个数组
+	 * @param arr
+	 */
 	@SuppressWarnings("rawtypes")
 	public static void sort(Comparable[] arr) {
 		StdRandom.shuffle(arr);
@@ -80,19 +118,19 @@ public class QuickSort {
 				arr[i] = i;
 			}
 			Shuffle.shuffle(arr);
-			QuickSort.sort(arr);
+			Quick.sort(arr);
 			for (int i = 0; i < N; i++) {
 				System.out.print(arr[i] + " ");
 			}
 			System.out.println();
 		}
 		
-		int N = 1000000;
+		int N = 10000000;
 		Integer[] arr = new Integer[N];
 		for (int i = 0; i < N; i++) {
-			arr[i] = StdRandom.uniform(N);
+			arr[i] = 1;
 		}
-		QuickSort.sort(arr);
+		Quick.sort(arr);
 		
 		for (int i = 0; i < 100 && i < N; i++) {
 			System.out.print(arr[i] + " ");
