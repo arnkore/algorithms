@@ -13,10 +13,27 @@ public class SortHelper {
 		arr[j] = tmp;
 	}
 
+	/**
+	 * 判断整个数组是否已排序
+	 * @param arr 待验证的数组
+	 * @return
+	 */
 	@SuppressWarnings("rawtypes")
 	public static boolean isSorted(Comparable[] arr) {
-		for (int i = 1; i < arr.length; i++) {
-			if (less(arr[i], arr[i - 1])) {
+		return isSorted(arr, 0, arr.length);
+	}
+
+	/**
+	 * 判断数组指定范围的数据是否已排序
+	 * @param arr 待验证的数组
+	 * @param low inclusive
+	 * @param high exclusive
+	 * @return
+	 */
+	@SuppressWarnings("rawtypes")
+	public static boolean isSorted(Comparable[] arr, int low, int high) {
+		for (int i = low; i < high - 1; i++) {
+			if (less(arr[i + 1], arr[i])) {
 				return false;
 			}
 		}

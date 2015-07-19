@@ -3,12 +3,17 @@ package github.arnkore.algorithms.core.sort;
 public class InsertionSort {
 	@SuppressWarnings("rawtypes")
 	public static void sort(Comparable[] arr) {
-		int N = arr.length;
+		sort(arr, 0, arr.length - 1);
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public static void sort(Comparable[] arr, int low, int high) {
+		assert low <= high;
 
-		for (int i = 1; i < N; i++) {
-			for (int j = i; j > 0; j--) {
-				if (SortHelper.less(arr[j], arr[j-1])) {
-					SortHelper.swap(arr, j, j-1);
+		for (int i = low + 1; i <= high; i++) {
+			for (int j = i; j > low; j--) {
+				if (SortHelper.less(arr[j], arr[j - 1])) {
+					SortHelper.swap(arr, j, j - 1);
 				} else {
 					break;
 				}
