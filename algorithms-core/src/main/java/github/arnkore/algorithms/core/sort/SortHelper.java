@@ -1,6 +1,8 @@
 package github.arnkore.algorithms.core.sort;
 
 public class SortHelper {
+	public static final int CUTOFF = 11;
+	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static boolean less(Comparable v, Comparable w) {
 		return v.compareTo(w) < 0;

@@ -3,8 +3,6 @@ package github.arnkore.algorithms.core.sort;
 import edu.princeton.cs.algs4.stdlib.StdRandom;
 
 public class MergeSort {
-	private static final int MINIMAL_SECTION_SIZE = 7;
-	
 	/**
 	 * 合并过程
 	 * @param aux 待合并的数组
@@ -38,8 +36,8 @@ public class MergeSort {
 	 */
 	@SuppressWarnings("rawtypes")
 	private static void sort(Comparable[] arr, Comparable[] aux, int low, int high, boolean isAux) {
-		// 优化：当待排区域小于MINIMAL_SECTION_SIZE时，采用插入排序，减少合并排序的递归深度
-		if (high - low + 1 <= MINIMAL_SECTION_SIZE) {
+		// 优化：当待排区域小于CUTOFF时，采用插入排序，减少合并排序的递归深度
+		if (high - low + 1 <= SortHelper.CUTOFF) {
 			if (isAux) {
 				InsertionSort.sort(aux, low, high);
 				copyBack(aux, arr, low, high);
