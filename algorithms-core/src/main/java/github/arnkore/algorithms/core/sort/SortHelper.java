@@ -42,4 +42,15 @@ public class SortHelper {
 
 		return true;
 	}
+	
+	@SuppressWarnings("rawtypes")
+	public static void print(Comparable[] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			if ((i + 1) % 10 == 0) {
+				System.out.println(arr[i]);
+			} else {
+				System.out.print(arr[i] + " ");
+			}
+		}
+	}
 }
