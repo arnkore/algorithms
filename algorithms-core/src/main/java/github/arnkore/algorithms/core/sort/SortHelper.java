@@ -7,6 +7,11 @@ public class SortHelper {
 	public static boolean less(Comparable v, Comparable w) {
 		return v.compareTo(w) < 0;
 	}
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public static boolean greater(Comparable v, Comparable w) {
+		return v.compareTo(w) > 0;
+	}
 
 	@SuppressWarnings("rawtypes")
 	public static void swap(Comparable[] arr, int i, int j) {

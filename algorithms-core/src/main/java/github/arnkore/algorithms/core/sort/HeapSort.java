@@ -23,7 +23,7 @@ public class HeapSort {
 		}
 		
 		while (heapSize > 1) {
-			swap(arr, ROOT, --heapSize);
+			SortHelper.swap(arr, ROOT, --heapSize);
 			sinkDown(arr, ROOT, heapSize);
 		}
 	}
@@ -38,9 +38,9 @@ public class HeapSort {
 	private static void sinkDown(Comparable[] arr, int k, int heapSize) {
 		while (leftChild(k) <= heapSize - 1) {
 			int lc = leftChild(k), rc = lc + 1, gc = lc;
-			if (rc <= heapSize - 1 && greater(arr, rc, gc))	gc = rc;
-			if (greater(arr, k, gc)) break;
-			swap(arr, k, gc);
+			if (rc <= heapSize - 1 && SortHelper.greater(arr[rc], arr[gc]))	gc = rc;
+			if (SortHelper.greater(arr[k], arr[gc])) break;
+			SortHelper.swap(arr, k, gc);
 			k = gc;
 		}
 	}
@@ -63,31 +63,6 @@ public class HeapSort {
 		return 2 * k + 1;
 	}
 
-	/**
-	 * 交换数组中索引i和j处的值
-	 * @param arr
-	 * @param i
-	 * @param j
-	 */
-	@SuppressWarnings("rawtypes")
-	private static void swap(Comparable[] arr, int i, int j) {
-		Comparable tmp = arr[i];
-		arr[i] = arr[j];
-		arr[j] = tmp;
-	}
-	
-	/**
-	 * 返回数组中索引i和j处值更大的一个
-	 * @param arr
-	 * @param i
-	 * @param j
-	 * @return
-	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private static boolean greater(Comparable[] arr, int i, int j) {
-		return arr[i].compareTo(arr[j]) > 0;
-	}
-	
 	public static void main(String[] args) {
 		Integer[] arr = new Integer[]{9, 0, 3, 7, 1, 8, 6, 2, 4, 5};
 		HeapSort.sort(arr);
