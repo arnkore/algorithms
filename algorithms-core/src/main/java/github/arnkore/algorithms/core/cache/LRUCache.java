@@ -43,8 +43,8 @@ public class LRUCache<K, V> implements Iterable<K>{
 	}
 	
 	/**
-	 * if lru-cache exists key, then cache hit, otherwise cache miss.
-	 * 
+	 * 查找缓存中是否已存在相应的数据。
+	 * 如果缓存中存在键key，缓存命中(cache hit)，否则，缓存未命中(cache miss)。
 	 * @param key
 	 * @return
 	 */
@@ -107,6 +107,10 @@ public class LRUCache<K, V> implements Iterable<K>{
 		}
 	}
 	
+	/**
+	 * 将链表中已存在的节点移动到链表头部
+	 * @param node
+	 */
 	private void moveToHead(CacheNode node) {
 		if (node == null) {
 			throw new IllegalArgumentException();
