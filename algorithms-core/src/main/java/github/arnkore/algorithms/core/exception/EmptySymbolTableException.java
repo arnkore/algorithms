@@ -1,4 +1,4 @@
-package github.arnkore.algorithms.core.tree;
+package github.arnkore.algorithms.core.exception;
 
 public class EmptySymbolTableException extends RuntimeException {
 	private static final long serialVersionUID = -5948192200447936172L;

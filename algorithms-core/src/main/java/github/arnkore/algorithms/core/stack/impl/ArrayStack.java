@@ -1,4 +1,6 @@
-package github.arnkore.algorithms.core.stack;
+package github.arnkore.algorithms.core.stack.impl;
+
+import github.arnkore.algorithms.core.stack.Stack;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

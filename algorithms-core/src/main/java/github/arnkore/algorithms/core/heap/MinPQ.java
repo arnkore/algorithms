@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 import edu.princeton.cs.algs4.stdlib.StdRandom;
+import github.arnkore.algorithms.core.exception.EmptyHeapException;
 import github.arnkore.algorithms.core.sort.SortHelper;
 
 /**

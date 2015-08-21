@@ -1,5 +1,7 @@
 package github.arnkore.algorithms.core.tree;
 
+import github.arnkore.algorithms.core.exception.EmptySymbolTableException;
+
 /**
  * 符号表-二叉搜索树实现
  * @author arnkore
