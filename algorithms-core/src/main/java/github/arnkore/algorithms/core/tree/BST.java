@@ -276,7 +276,7 @@ public class BST<K extends Comparable<K>, V> implements Iterable<K> {
 	}
 	
 	/**
-	 * how many elements in [startKey, endKey]
+	 * how many elements in specified scope([lo, hi])
 	 * @param lo
 	 * @param hi
 	 * @return
@@ -294,10 +294,20 @@ public class BST<K extends Comparable<K>, V> implements Iterable<K> {
 		return x == null ? 0 : x.size;
 	}
 
+	/**
+	 * return all elements in bst
+	 * @return
+	 */
 	public Iterator<K> keys() {
 		return keys(min(), max());
 	}
 	
+	/**
+	 * return elements in specified scope([lo, hi])
+	 * @param lo
+	 * @param hi
+	 * @return
+	 */
 	public Iterator<K> keys(K lo, K hi) {
 		if (lo.compareTo(hi) > 0) throw new IllegalArgumentException();
 		Queue<K> q = new ArrayQueue<K>();
@@ -326,7 +336,7 @@ public class BST<K extends Comparable<K>, V> implements Iterable<K> {
 	}
 	
 	/**
-	 * inorder iteration
+	 * in-order iteration
 	 * @return
 	 */
 	public Iterator<K> inorder() {
@@ -343,7 +353,7 @@ public class BST<K extends Comparable<K>, V> implements Iterable<K> {
 	}
 	
 	/**
-	 * preorder iteration
+	 * pre-order iteration
 	 * @return
 	 */
 	public Iterator<K> preorder() {
@@ -360,7 +370,7 @@ public class BST<K extends Comparable<K>, V> implements Iterable<K> {
 	}
 	
 	/**
-	 * postorder iteration
+	 * post-order iteration
 	 * @return
 	 */
 	public Iterator<K> postorder() {
@@ -376,6 +386,10 @@ public class BST<K extends Comparable<K>, V> implements Iterable<K> {
 		q.enqueue(x.key);
 	}
 	
+	/**
+	 * level-order iteration
+	 * @return
+	 */
 	public Iterator<K> levelOrder() {
 		Queue<K> q = new ArrayQueue<K>();
 		levelOrder(root, q);
