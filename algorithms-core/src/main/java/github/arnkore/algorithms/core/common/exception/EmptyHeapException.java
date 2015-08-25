@@ -1,4 +1,4 @@
-package github.arnkore.algorithms.core.exception;
+package github.arnkore.algorithms.core.common.exception;
 
 public class EmptyHeapException extends RuntimeException {
 	private static final long serialVersionUID = -1694787667057742342L;

@@ -1,6 +1,6 @@
 package github.arnkore.algorithms.core.sort;
 
-import github.arnkore.algorithms.core.Shuffle;
+import github.arnkore.algorithms.core.common.Shuffle;
 
 public class BottomUpMergeSort {
 	/**

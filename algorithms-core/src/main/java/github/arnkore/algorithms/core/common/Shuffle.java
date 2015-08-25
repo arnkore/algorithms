@@ -1,4 +1,4 @@
-package github.arnkore.algorithms.core;
+package github.arnkore.algorithms.core.common;
 
 import edu.princeton.cs.algs4.stdlib.StdRandom;
 

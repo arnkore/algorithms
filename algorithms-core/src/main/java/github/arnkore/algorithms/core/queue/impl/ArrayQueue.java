@@ -1,6 +1,6 @@
 package github.arnkore.algorithms.core.queue.impl;
 
-import github.arnkore.algorithms.core.exception.EmptyQueueException;
+import github.arnkore.algorithms.core.common.exception.EmptyQueueException;
 import github.arnkore.algorithms.core.queue.Queue;
 
 import java.util.Iterator;

@@ -1,6 +1,6 @@
 package github.arnkore.algorithms.core.stack.impl;
 
-import github.arnkore.algorithms.core.exception.EmptyStackException;
+import github.arnkore.algorithms.core.common.exception.EmptyStackException;
 import github.arnkore.algorithms.core.stack.Stack;
 
 import java.util.Iterator;

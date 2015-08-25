@@ -1,6 +1,6 @@
 package github.arnkore.algorithms.core.tree;
 
-import github.arnkore.algorithms.core.exception.EmptySymbolTableException;
+import github.arnkore.algorithms.core.common.exception.EmptySymbolTableException;
 import github.arnkore.algorithms.core.queue.Queue;
 import github.arnkore.algorithms.core.queue.impl.ArrayQueue;
 
