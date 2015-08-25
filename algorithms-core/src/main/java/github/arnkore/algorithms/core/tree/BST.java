@@ -217,20 +217,16 @@ public class BST<K extends Comparable<K>, V> implements Iterable<K> {
 			throw new IllegalArgumentException();
 		}
 		
-		if (root == null) {
-			throw new EmptySymbolTableException();
-		}
-		
 		return select(root, k);
 	}
 	
 	private K select(Node x, int k) {
 		if (x == null) throw new NoSuchElementException();
 		
-		int sz = size(x.left) + 1;
-		if (sz < k) {
-			return select(x.right, k - sz);
-		} else if (sz > k) {
+		int lisz = size(x.left) + 1;
+		if (lisz < k) {
+			return select(x.right, k - lisz);
+		} else if (lisz > k) {
 			return select(x.left, k);
 		} else {
 			return x.key;
