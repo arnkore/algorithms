@@ -3,6 +3,10 @@
 .settings
 .classpath
 
+# IDEA
+.idea
+*.iml
+
 # maven
 target/
 
